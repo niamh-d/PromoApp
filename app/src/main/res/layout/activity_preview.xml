@@ -14,14 +14,14 @@
         android:layout_margin="12dp"
         android:fontFamily="sans-serif-light"
         android:lineSpacingExtra="4sp"
-        android:text="Below is your message. If happy, press the 'SEND' button. Otherwise, click 'EDIT'."
-        android:textSize="12dp" />
+        android:text="@string/info_text_below_is_your_msg"
+        android:textSize="12sp" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-light"
-        android:textSize="18dp"
+        android:textSize="18sp"
         app:cardBackgroundColor="#FCFFCD"
         app:cardCornerRadius="6dp"
         app:cardUseCompatPadding="true">
@@ -48,7 +48,7 @@
             android:textColor="@color/design_default_color_primary_variant"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Edit"
+            android:text="@string/button_edit"
 
             />
 
@@ -58,7 +58,7 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Send Message" />
+        android:text="@string/button_send_message" />
 
     </LinearLayout>
 

@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">PromoApp</string>
+
+    <string name="hint_contact_name">Contact Name</string>
+    <string name="hint_contact_number">Contact Number</string>
+    <string name="hint_my_name">My Display Name</string>
+    <string name="checkbox_text_include_junior">Include \'Junior\'</string>
+    <string name="checkbox_text_immediate_start">Immediate Start</string>
+    <string name="hint_available_from_date">Available from date</string>
+    <string name="button_preview_message">Preview Message</string>
+    <string name="button_edit">Edit</string>
+    <string name="button_send_message">Send Message</string>
+    <string name="info_text_below_is_your_msg">Below is your message. If happy, press the \'SEND\' button. Otherwise, click \'EDIT\'.</string>
 </resources>
