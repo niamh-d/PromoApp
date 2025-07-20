@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/preview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="48dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:fontFamily="sans-serif-light"
+        android:lineSpacingExtra="4sp"
+        android:text="Below is your message. If happy, press the 'SEND' button. Otherwise, click 'EDIT'."
+        android:textSize="12dp" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:textSize="18dp"
+        app:cardBackgroundColor="#FCFFCD"
+        app:cardCornerRadius="6dp"
+        app:cardUseCompatPadding="true">
+
+        <TextView
+            android:id="@+id/text_view_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            tools:text="shdkjshdkjhsakjdhkjashdkhaskjdhjksahdjkhasjkdhkjsahdhsakjdhkjsahdiuhsiuahdiuhsaihdhsadh" />
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="24dp"
+        android:layout_height="wrap_content">
+
+
+        <Button
+            android:id="@+id/button_back"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:textColor="@color/design_default_color_primary_variant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit"
+
+            />
+
+
+    <Button
+        android:id="@+id/button_send_message"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send Message" />
+
+    </LinearLayout>
+
+</LinearLayout>
