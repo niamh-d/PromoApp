@@ -14,7 +14,7 @@ data class Message(
 
     fun generateMessage(): String {
         return """
-            Hi ${contactName}!,
+            Hi $contactName!,
             
             My name is $displayName and I am ${generateFullJobTitle()}.
             
@@ -23,6 +23,8 @@ data class Message(
             I am available to start ${generateAvailability()}.
             
             Don't hesitate to get in touch!
+            
+            Thanks!
             
         """.trimIndent()
     }

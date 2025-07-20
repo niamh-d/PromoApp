@@ -1,14 +1,11 @@
 package dev.niamhdoyle.promoapp
 
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import dev.niamhdoyle.promoapp.databinding.ActivityPreviewBinding
 import androidx.core.net.toUri
 
-@RequiresApi(Build.VERSION_CODES.TIRAMISU)
 class PreviewActivity : AppCompatActivity() {
 
     private lateinit var vb: ActivityPreviewBinding
@@ -19,15 +16,19 @@ class PreviewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         vb = ActivityPreviewBinding.inflate(layoutInflater)
         setContentView(vb.root)
-        displayMessagePreview()
-        setupEditButton()
-        setupSendMessageButton()
+        getMessage()
+        vb.textViewMessage.text = messageBody
+        setupButtons()
     }
 
-    private fun displayMessagePreview() {
+    private fun getMessage() {
         message = intent.getSerializableExtra("Message", Message::class.java)!!
         messageBody = message.generateMessage()
-        vb.textViewMessage.text = messageBody
+    }
+
+    private fun setupButtons() {
+        setupEditButton()
+        setupSendMessageButton()
     }
 
     private fun setupEditButton() {

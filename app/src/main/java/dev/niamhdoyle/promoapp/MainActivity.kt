@@ -1,15 +1,12 @@
 package dev.niamhdoyle.promoapp
 
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
-import androidx.annotation.RequiresApi
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import dev.niamhdoyle.promoapp.databinding.ActivityMainBinding
 
-@RequiresApi(Build.VERSION_CODES.TIRAMISU)
 class MainActivity : AppCompatActivity() {
 
     private lateinit var vb: ActivityMainBinding
@@ -25,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         vb = ActivityMainBinding.inflate(layoutInflater)
         setContentView(vb.root)
         vb.buttonPreview.setOnClickListener { onPreviewClicked() }
-        vb.checkBoxImmediateStart.setOnClickListener {toggleStartDateView()}
+        vb.checkBoxImmediateStart.setOnClickListener {toggleStartDateViewVisibility()}
 
         val spinnerAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, spinnerValues)
         vb.spinnerJobTitle.adapter = spinnerAdapter
@@ -33,16 +30,28 @@ class MainActivity : AppCompatActivity() {
         setFields()
     }
 
-    private fun toggleStartDateView() {
+    private fun toggleStartDateViewVisibility() {
         startDateViewIsVisible = !startDateViewIsVisible
+        setStartDateView()
+    }
+
+    private fun setStartDateView() {
         vb.editTextStartDate.isVisible = startDateViewIsVisible
+        if (!startDateViewIsVisible) {
+            vb.editTextStartDate.setText("")
+        }
     }
 
     private fun setFields() {
-        if(message == null) return
+        if (message == null) return
         else {
             val jobTitle = message!!.jobTitle
-            val spinnerIndex = if(jobTitle== null) 0 else spinnerValues.indexOf(jobTitle)
+            val spinnerIndex = if (jobTitle == null) 0 else spinnerValues.indexOf(jobTitle)
+
+            if (message!!.immediateStart) {
+            startDateViewIsVisible = false
+            setStartDateView()
+            }
 
             vb.editTextContactName.setText(message!!.contactName)
             vb.editTextContactNumber.setText(message!!.contactNumber)
